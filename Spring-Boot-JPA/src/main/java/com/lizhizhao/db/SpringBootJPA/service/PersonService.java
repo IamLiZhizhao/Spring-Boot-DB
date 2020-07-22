@@ -7,9 +7,9 @@ import com.lizhizhao.db.SpringBootJPA.bean.Person;
  * @since 2020-06-02 11:36
  */
 public interface PersonService {
-    String create(Person person);
+    Person create(Person person);
 
-    Boolean update(Person person);
+    Person update(Person person);
 
-    Boolean delete(Long id);
+    void delete(Long id);
 }

@@ -15,17 +15,17 @@ public class PersonServiceImpl implements PersonService {
     PersonRepository personRepository;
 
     @Override
-    public String create(Person person) {
-        return null;
+    public Person create(Person person) {
+        return personRepository.save(person);
     }
 
     @Override
-    public Boolean update(Person person) {
-        return null;
+    public Person update(Person person) {
+        return personRepository.saveAndFlush(person);
     }
 
     @Override
-    public Boolean delete(Long id) {
-        return null;
+    public void delete(Long id) {
+        personRepository.deleteById(id);
     }
 }
