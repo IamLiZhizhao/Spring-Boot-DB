@@ -4,6 +4,7 @@ import com.lizhizhao.db.SpringBootJdbcTemplate.entity.PersonDO;
 import com.lizhizhao.db.SpringBootJdbcTemplate.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,18 +49,9 @@ public class PersonController {
     }
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public String insert( @RequestParam(value = "name")String name,
-                                 @RequestParam(value = "age")int age){
-        PersonDO PersonDO = new PersonDO();
-        PersonDO.setAge(age);
-        PersonDO.setName(name);
-        int t = personService.add(PersonDO);
-        if(t==1){
-            return PersonDO.toString();
-        }else {
-            return "fail";
-        }
-
+    public String insert(@RequestBody PersonDO personDO){
+        int t = personService.add(personDO);
+        return t==1 ? "true" : "fail";
     }
 
 }
