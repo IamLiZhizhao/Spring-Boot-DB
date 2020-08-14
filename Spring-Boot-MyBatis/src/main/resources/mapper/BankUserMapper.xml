@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lizhizhao.db.SpringBootMyBatis.dao.BankUserDao">
+
+    <select id="findBankUserByName" parameterType="String" resultType="com.lizhizhao.db.SpringBootMyBatis.bean.BankUser">
+        SELECT * FROM bank_user WHERE name = #{name}
+    </select>
+
+</mapper>
