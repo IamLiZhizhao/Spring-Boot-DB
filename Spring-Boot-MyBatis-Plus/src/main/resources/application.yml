@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Spring-Boot-MyBatis-Plus
+
+  #可以指定开发模式还是部署模式 dev / prod
+  profiles:
+    active: dev
+
+# Logger Config
+logging:
+  level:
+    com.baomidou.mybatisplus.samples.quickstart: debug
+
+
