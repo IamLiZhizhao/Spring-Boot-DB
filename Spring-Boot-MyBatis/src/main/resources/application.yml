@@ -1,0 +1,35 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Spring-Boot-MyBatis
+  #数据库相关配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+
+
+mybatis:
+  # type-aliases扫描路径
+  type-aliases-package: com.lizhizhao.db.SpringBootMyBatis.mapper
+  # mapper xml实现扫描路径
+  mapper-locations: classpath:mapper/*Mapper.xml
+  property:
+    order: BEFORE
+
+#mappers 多个接口时逗号隔开
+mapper:
+  mappers: com.lizhizhao.db.SpringBootMyBatis.config.MyMapper
+  not-empty: false
+  identity: mysql
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

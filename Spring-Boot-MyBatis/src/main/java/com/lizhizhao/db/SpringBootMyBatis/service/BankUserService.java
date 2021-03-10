@@ -1,7 +1,7 @@
 package com.lizhizhao.db.SpringBootMyBatis.service;
 
 import com.lizhizhao.db.SpringBootMyBatis.bean.BankUser;
-import com.lizhizhao.db.SpringBootMyBatis.dao.BankUserDao;
+import com.lizhizhao.db.SpringBootMyBatis.mapper.BankUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,28 +13,28 @@ import java.util.List;
 public class BankUserService {
 
     @Autowired
-    private BankUserDao bankUserDao;
+    private BankUserMapper bankUserMapper;
 
     /**
      * 根据名字查找用户
      */
     public BankUser selectBankUserByName(String name) {
-        return bankUserDao.findBankUserByName(name);
+        return bankUserMapper.findBankUserByName(name);
     }
 
     /**
      * 查找所有用户
      */
     public List<BankUser> selectAllBankUser() {
-        return bankUserDao.findAllBankUser();
+        return bankUserMapper.findAllBankUser();
     }
 
     /**
      * 插入两个用户
      */
     public void insertService() {
-        bankUserDao.insertBankUser("SnailClimb", 22, new BigDecimal("3000.0"));
-        bankUserDao.insertBankUser("Daisy", 19, new BigDecimal("3000.0"));
+        bankUserMapper.insertBankUser("SnailClimb", 22, new BigDecimal("3000.0"));
+        bankUserMapper.insertBankUser("Daisy", 19, new BigDecimal("3000.0"));
     }
 
     /**
@@ -42,7 +42,7 @@ public class BankUserService {
      */
 
     public void deleteService(int id) {
-        bankUserDao.deleteBankUser(id);
+        bankUserMapper.deleteBankUser(id);
     }
 
     /**
@@ -50,9 +50,9 @@ public class BankUserService {
      */
     @Transactional
     public void changemoney() {
-        bankUserDao.updateBankUser("SnailClimb", 22, new BigDecimal("2000.0"), 3);
+        bankUserMapper.updateBankUser("SnailClimb", 22, new BigDecimal("2000.0"), 3);
         // 模拟转账过程中可能遇到的意外状况
         int temp = 1 / 0;
-        bankUserDao.updateBankUser("Daisy", 19, new BigDecimal("4000.0"), 4);
+        bankUserMapper.updateBankUser("Daisy", 19, new BigDecimal("4000.0"), 4);
     }
 }

@@ -1,4 +1,4 @@
-package com.lizhizhao.db.SpringBootMyBatis.dao;
+package com.lizhizhao.db.SpringBootMyBatis.mapper;
 
 import com.lizhizhao.db.SpringBootMyBatis.bean.BankUser;
 import org.apache.ibatis.annotations.Delete;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @Component
 @Mapper
-public interface BankUserDao {
+public interface BankUserMapper {
 
     /**
      * 通过名字查询用户信息
