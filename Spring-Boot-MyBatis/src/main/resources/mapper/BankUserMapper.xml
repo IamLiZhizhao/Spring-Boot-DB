@@ -4,6 +4,13 @@
 
 <mapper namespace="com.lizhizhao.db.SpringBootMyBatis.mapper.BankUserMapper">
 
+    <resultMap id="BaseResultMap" type="com.lizhizhao.db.SpringBootMyBatis.bean.BankUser">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="age" jdbcType="INTEGER" property="age" />
+        <result column="money" jdbcType="DECIMAL" property="money" />
+    </resultMap>
+
     <select id="findBankUserByName" parameterType="String" resultType="com.lizhizhao.db.SpringBootMyBatis.bean.BankUser">
         SELECT * FROM bank_user WHERE name = #{name}
     </select>

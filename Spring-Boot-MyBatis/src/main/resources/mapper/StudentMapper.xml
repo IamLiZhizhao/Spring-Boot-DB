@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lizhizhao.db.SpringBootMyBatis.mapper.StudentMapper">
-  <resultMap id="BaseResultMap" type="com.lizhizhao.db.SpringBootMyBatis.bean.Student">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="sno" jdbcType="INTEGER" property="sno" />
-    <result column="sname" jdbcType="VARCHAR" property="sname" />
-    <result column="ssex" jdbcType="VARCHAR" property="ssex" />
-    <result column="score" jdbcType="DECIMAL" property="score" />
-  </resultMap>
 
   <resultMap id="BaseResultMap" type="com.lizhizhao.db.SpringBootMyBatis.bean.Student">
     <id column="sno" jdbcType="INTEGER" property="sno" />

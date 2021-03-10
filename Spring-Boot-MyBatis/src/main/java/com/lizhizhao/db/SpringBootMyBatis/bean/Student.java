@@ -14,6 +14,15 @@ public class Student {
 
     private BigDecimal score;
 
+    public Student() {
+    }
+    public Student(Integer sno, String sname, String ssex, BigDecimal score) {
+        this.sno = sno;
+        this.sname = sname;
+        this.ssex = ssex;
+        this.score = score;
+    }
+
     /**
      * @return sno
      */

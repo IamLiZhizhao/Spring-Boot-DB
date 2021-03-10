@@ -13,3 +13,15 @@ INSERT INTO `bank_user`(`id`, `name`, `age`, `money`) VALUES (4, 'Sandy', 21, 65
 INSERT INTO `bank_user`(`id`, `name`, `age`, `money`) VALUES (5, 'SnailClimb', 22, 3000.000000);
 INSERT INTO `bank_user`(`id`, `name`, `age`, `money`) VALUES (6, 'Daisy', 19, 3000.000000);
 INSERT INTO `bank_user`(`id`, `name`, `age`, `money`) VALUES (7, 'Billie', 24, 1500.000000);
+
+
+CREATE TABLE `student` (
+  `sno` int(11) NOT NULL,
+  `sname` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ssex` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `score` decimal(6,2) DEFAULT NULL,
+  PRIMARY KEY (`sno`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `test`.`student`(`sno`, `sname`, `ssex`, `score`) VALUES (1, 'qingqing', 'W', 98.00);
+INSERT INTO `test`.`student`(`sno`, `sname`, `ssex`, `score`) VALUES (2, 'MEI', 'W', 85.00);
